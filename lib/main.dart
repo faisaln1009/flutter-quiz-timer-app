@@ -1,34 +1,23 @@
 import 'package:flutter/material.dart';
+import 'screen/login_screen.dart';
 
 void main() {
-runApp(
-  MaterialApp(
-    home: Scaffold(
-    backgroundColor: Colors.teal,
-    body: Row(
-     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Container(
-          width: 100,
-            color: Colors.white,
-          ),
-          Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-          Container(
-          width: 100,
-          height: 100,
-          color: Colors.black,),
-          Container(
-          width: 100,
-          height: 100,
-          color: Colors.blue,),],),
-          Container(
-          width: 100,
-          color: Colors.lightGreen,),
-    ],
-  ),
-  ),
-),
-);
+  runApp(const QuizApp());
+}
+
+class QuizApp extends StatelessWidget {
+  const QuizApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Quiz App with Timer',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        useMaterial3: true,
+      ),
+      home: const LoginScreen(),
+    );
+  }
 }
